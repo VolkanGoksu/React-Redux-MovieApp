@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App.js';
 
 
-import { createStore, applyMiddleware } from 'redux'
+
 import thunk from 'redux-thunk'
-import rootReducer from './reducers/rootReducer'
+import rootReducer from './reducers/rootReducer.js'
+import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';

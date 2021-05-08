@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import MoviesList from '../MoviesList';
-import { fetchMovies } from '../../actions/movies'
+import MoviesList from '../MoviesList.js';
+import { fetchMovies } from '../../actions/movies.js'
 
 class MoviesPage extends Component {
     static propTypes = {

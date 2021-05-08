@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { menuStyle, fixedMenuStyle } from '../helpers/styleHelper'
 import { Link } from 'react-router-dom';
+import { menuStyle, fixedMenuStyle } from '../helpers/styleHelper.js'
 import { Container, Visibility, Menu, Image } from 'semantic-ui-react'
 class Header extends Component {
     state = {
