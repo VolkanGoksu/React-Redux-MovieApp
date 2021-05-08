@@ -9,7 +9,9 @@ const MovieList = ({ movies }) => {
 
     const moviesList = (
         <div>
-            Movies List
+            {
+                  movies.error.response ? <h3>Error retrieving data</h3>:'Hata yok'
+            }
         </div>
     )
     return (
