@@ -1,6 +1,13 @@
 
 import {FETCHED_MOVIES} from '../actions/movies.js'
-export default (state = [] , action)=>{
+const initialState = {
+  fetching:false,
+  fetched:false,
+  movies:[],
+  error : {}
+
+}
+export default (state = initialState, action)=>{
   switch(action.type){
     case FETCHED_MOVIES:
       return{
