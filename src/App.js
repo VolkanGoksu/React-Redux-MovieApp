@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css';
-import {menuStyle,fixedMenuStyle,overlayStyle} from './helpers/styleHelper'
+import {menuStyle,fixedMenuStyle} from './helpers/styleHelper'
 
 import {
   Container,
@@ -25,22 +25,18 @@ import { Link, Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
-    menuFixed: false,
+    menuFixed: null,
     overlayFixed: false,
   }
 
 
 
-  stickOverlay = () => this.setState({ overlayFixed: true })
 
   stickTopMenu = () => this.setState({ menuFixed: true })
-
-  unStickOverlay = () => this.setState({ overlayFixed: false })
-
-  unStickTopMenu = () => this.setState({ menuFixed: false })
+  unStickTopMenu = () => this.setState({ menuFixed: null })
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state
+    const { menuFixed } = this.state
     return (
       <div className="App">
         <Visibility
@@ -58,8 +54,8 @@ class App extends Component {
                 <Image size='mini' src='/logo.png' />
               </Menu.Item>
               <Menu.Item header>Movieapp</Menu.Item>
-              <Menu.Item as='a'>
-                <Link to="movies">Movies</Link>
+              <Menu.Item as={Link} to="/movies">
+                 Movies
               </Menu.Item>
               <Menu.Item as='a'>Add new</Menu.Item>
 
@@ -68,14 +64,6 @@ class App extends Component {
         </Visibility>
 
         <Container text>
-
-          <Visibility
-            offset={80}
-            once={false}
-            onTopPassed={this.stickOverlay}
-            onTopVisible={this.unStickOverlay}
-            style={overlayFixed ? { ...overlayStyle, ...overlayRect } : {}}
-          />
 
           <Route path='/movies' component={MoviesPage}></Route>
         </Container>
