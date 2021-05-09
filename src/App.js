@@ -7,7 +7,7 @@ import MoviesPage from './components/pages/MoviesPage.js';
 import Footer from './components/Footer.js';
 import Header from './components/Header.js';
 import NewMoviePage from './components/pages/NewMoviePage.js';
-
+import './App.css';
 
 
 class App extends Component {
