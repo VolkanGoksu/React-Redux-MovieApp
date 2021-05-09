@@ -25,15 +25,17 @@ class Header extends Component {
                     >
                         <Container text>
                             <Menu.Item as={Link} to="/" exact="true" exact="true">
-                           
-                                    <Image size='mini' src='https://react.semantic-ui.com/logo.png' />
-                                    <Menu.Item header>Movieapp</Menu.Item>
-                                 
-                                <Menu.Item as={NavLink} to="/movies" >
-								Movies
+
+                                <Image size='mini' src='https://react.semantic-ui.com/logo.png' />
+                                <Menu.Item header>Movieapp</Menu.Item>
+
+                                <Menu.Item as={NavLink} to="/movies" exact>
+                                    Movies
 							</Menu.Item>
-							<Menu.Item as='a'>Add New</Menu.Item>
-                            </Menu.Item>   
+                                <Menu.Item as={NavLink} to="/movies/new">
+                                    Add New
+							</Menu.Item>
+                            </Menu.Item>
                         </Container>
                     </Menu>
                 </Visibility>
