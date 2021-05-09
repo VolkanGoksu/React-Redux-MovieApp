@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from './MovieCard.js';
-import {Grid} from 'semantic-ui-react'
+import {Grid} from 'semantic-ui-react';
+
 
 
 const MovieList = ({ movies }) => {
@@ -10,8 +11,9 @@ const MovieList = ({ movies }) => {
     )
 
     const moviesList = (
-
         <div>
+        
+         
             {
                 movies.error.response ? <h3>Error retrieving data</h3>
                     : 
@@ -25,6 +27,7 @@ const MovieList = ({ movies }) => {
         </div>
     )
     return (
+        
         <div>
             {movies.length === 0 ? emptyMessage : moviesList}
         </div>

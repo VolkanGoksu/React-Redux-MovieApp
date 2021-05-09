@@ -12,7 +12,8 @@ export default (state = initialState, action)=>{
     case FETCH_MOVIES:
       return{
         ...state,
-        movies: action.payload
+        movies: action.payload,
+     
       }
       case FETCH_MOVIES_ERROR:
         return{
