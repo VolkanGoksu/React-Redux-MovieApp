@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css';
 import { Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react'
+import HomePage from './components/pages/HomePage'
 import MoviesPage from './components/pages/MoviesPage.js';
 import Footer from './components/Footer.js';
 import Header from './components/Header.js';
@@ -16,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Container text>
+         <Route exact path='/' component={HomePage}></Route>
           <Route exact path='/movies' component={MoviesPage}></Route>
           <Route exact path='/movies/new' component={NewMoviePage}></Route>
           <Route exact path='/movie/:_id' component={NewMoviePage}></Route>
