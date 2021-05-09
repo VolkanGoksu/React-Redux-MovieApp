@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom'
 import InlineError from './InlineError';
 import { Button, Form, Image } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 class NewMovieForm extends Component {
     state = {
-        title: '',
-        cover: '',
+        title: this.props.movie ? this.props.movie.title : '',
+        cover: this.props.movie ? this.props.movie.cover : '',
         errors: {}
     };
     static propTypes = {
@@ -63,7 +64,8 @@ class NewMovieForm extends Component {
                     </Form.Field>
                     <Image src={this.state.cover} size='small' />
                     <div className="clearfix"></div>
-                    <Button type='submit'>Submit</Button>
+                    <Button type='submit' >Submit</Button>
+                    
                 </Form>
             </div>
 
