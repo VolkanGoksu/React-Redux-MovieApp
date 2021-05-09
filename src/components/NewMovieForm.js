@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import InlineError from './InlineError';
 import { Button, Form, Image } from 'semantic-ui-react'
 
@@ -9,6 +10,9 @@ class NewMovieForm extends Component {
 		cover: '',
         errors:{}
 	};
+    static propTypes = {
+        onNewMovieSubmit:PropTypes.func.isRequired
+    }
     handleChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value
@@ -20,6 +24,9 @@ class NewMovieForm extends Component {
           this.setState({
               errors
           })
+          if(Object.keys(errors).length===0){
+              this.props.onNewMovieSubmit(this.state)
+          }
     }
     validate=()=>{
         const errors = {};
@@ -31,7 +38,7 @@ class NewMovieForm extends Component {
         const {errors} = this.state;
 		return (
 			<div>	<h2>New Movie</h2>
-            <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={this.onSubmit} >
                 <Form.Field error={errors.title}>
                     <label>Title</label>
                      {errors.title && <InlineError message={!!errors.title} /> }
