@@ -23,8 +23,8 @@ class NewMovieForm extends Component {
     }
     validate=()=>{
         const errors = {};
-        if(!this.state.title) errors.title = "cant be blank"
-        if(!this.state.cover) errors.cover = "cant be blank"
+        if(!this.state.title) errors.title = "Boş Bırakılamaz"
+        if(!this.state.cover) errors.cover = "Boş Bırakılamaz"
         return errors
     }
     render() {
@@ -32,9 +32,9 @@ class NewMovieForm extends Component {
 		return (
 			<div>	<h2>New Movie</h2>
             <Form onSubmit={this.onSubmit}>
-                <Form.Field>
+                <Form.Field error={errors.title}>
                     <label>Title</label>
-                     {errors.title && <InlineError message={errors.title} /> }
+                     {errors.title && <InlineError message={!!errors.title} /> }
                     <input
                         id="title"
                         name="title"
@@ -42,9 +42,9 @@ class NewMovieForm extends Component {
                         onChange={this.handleChange}
                         placeholder='Title' />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field error={errors.cover}>
                     <label>Cover Url</label>
-                    {errors.cover && <InlineError message={errors.cover} /> }
+                    {errors.cover && <InlineError message={!!errors.cover} /> }
                     <input
                         id="cover"
                         name="cover"
