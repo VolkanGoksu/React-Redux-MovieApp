@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from './MovieCard.js';
 import {Grid} from 'semantic-ui-react';
-
+import { HashLoader } from 'react-spinners';
 
 
 const MovieList = ({ movies }) => {
@@ -11,7 +11,12 @@ const MovieList = ({ movies }) => {
     )
 
     const moviesList = (
-        <div>
+        <div> 
+            <HashLoader
+				size={40}
+				color={'#36bdb3'}
+				loading={movies.fetching}
+			/>
         
          
             {

@@ -2,21 +2,16 @@
 import axios from 'axios'
 import {API_BASE} from  '../config/env.js'
 
-
-export const FETCH_MOVIES = "FETCH_MOVIES"
-export const FETCH_MOVIES_ERROR = "FETCH_MOVIES_ERROR"
+export const FETCH_MOVIES_PENDING = "FETCH_MOVIES_PENDING";
+export const FETCH_MOVIES_FULFILLED = "FETCH_MOVIES_FULFILLED";
+export const FETCH_MOVIES_REJECTED = "FETCH_MOVIES_REJECTED";
 export function fetchMovies(){
   return   dispatch=>{
-      axios.get(`${API_BASE}/movies`)
- 
-     .then(res=>dispatch({
-       type : FETCH_MOVIES,
-       payload : res.data
-     }))
-    .catch(error=>({
-       type : FETCH_MOVIES_ERROR,
-       payload: error
-    }))
+    dispatch({
+			type: "FETCH_MOVIES",
+			payload: axios.get(`${API_BASE}/movies`)
+				.then(result => result.data)
+		})
   }
 }
 

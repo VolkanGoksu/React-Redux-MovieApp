@@ -7,7 +7,7 @@ import App from './App.js';
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import rootReducer from './reducers/rootReducer.js'
-import { createPromise } from 'redux-promise-middleware';
+import {createPromise} from 'redux-promise-middleware';
 
 
 import { createStore, applyMiddleware } from 'redux'
