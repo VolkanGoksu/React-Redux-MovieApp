@@ -16,10 +16,8 @@ const Footer = props => {
                 <Container textAlign='center'>
                     <Image src='https://react.semantic-ui.com/logo.png' centered size='mini' />
                     <List horizontal inverted divided link>
-                        <List.Item as='a' href='#'>Site Map</List.Item>
-                        <List.Item as='a' href='#'>Contact Us</List.Item>
-                        <List.Item as='a' href='#'>Terms and Conditions</List.Item>
-                        <List.Item as='a' href='#'>Privacy Policy</List.Item>
+                        <List.Item as='a' href='https://github.com/VolkanGoksu'>GitHub</List.Item>
+                        <List.Item as='a' href='https://www.linkedin.com/in/volkan-g%C3%B6ksu-7234b0211/github'>LinkedIn</List.Item>
                     </List>
                 </Container>
             </Segment>

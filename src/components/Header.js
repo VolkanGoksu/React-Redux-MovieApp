@@ -20,7 +20,7 @@ class Header extends Component {
                 >
                     <Menu
                         borderless
-                        fixed={menuFixed ? 'top' : undefined}
+                      
                         style={menuFixed ? fixedMenuStyle : menuStyle}
                     >
                         <Container text>
