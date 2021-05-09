@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom'
 import InlineError from './InlineError';
 import { Button, Form, Image } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+
 
 
 class NewMovieForm extends Component {
@@ -12,7 +12,8 @@ class NewMovieForm extends Component {
         _id: this.props.movie ? this.props.movie._id : '',
         title: this.props.movie ? this.props.movie.title : '',
         cover: this.props.movie ? this.props.movie.cover : '',
-        errors: {}
+        errors: {},
+        redirect: false
     };
     static propTypes = {
         onNewMovieSubmit: PropTypes.func.isRequired
@@ -27,7 +28,7 @@ class NewMovieForm extends Component {
         const errors = this.validate();
         //console.log(errors);
         this.setState({
-            errors
+            errors,redirect: true
         })
         const _id = this.state._id || this.props.newMovie.movie._id;
 
@@ -78,7 +79,8 @@ class NewMovieForm extends Component {
         return (
             <div>
                 {
-                    this.props.newMovie.done ? <Redirect to="/movies" /> : form
+                 this.props.newMovie.done && this.state.redirect
+                 ? <Redirect to="/movies" /> : form
                 }
             </div>
 
